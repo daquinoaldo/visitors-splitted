@@ -1,0 +1,28 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ name }}-frontend
+  namespace: {{ namespace }}
+spec:
+  replicas: {{ frontendSize }}
+  selector:
+    matchLabels:
+      app: {{ name }}
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        app: {{ name }}
+        tier: frontend
+    spec:
+      containers:
+        - name: {{ name }}-frontend
+          image: {{ frontendImage }}
+          imagePullPolicy: Always
+          ports:
+            - name: {{ name }}
+              containerPort: {{ containerPort }}
+          env:
+            - name: REACT_APP_TITLE
+              value: {{ frontendTitle }}

@@ -1,0 +1,7 @@
+apiVersion: example.com/v1
+kind: VisitorsBackend
+metadata:
+  name: example-visitorsbackend
+spec:
+  database-size: 1
+  backend-size: 3

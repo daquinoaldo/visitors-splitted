@@ -1,0 +1,9 @@
+apiVersion: example.com/v1
+kind: VisitorsApp
+metadata:
+  name: visitorsapp
+  annotations:
+    "ansible.operator-sdk/verbosity": "4"
+spec:
+  size: 3
+  title: "Another custom title"

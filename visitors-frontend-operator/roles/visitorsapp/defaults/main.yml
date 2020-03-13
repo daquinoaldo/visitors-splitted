@@ -1,0 +1,10 @@
+---
+# defaults file for visitorsapp
+name: "{{ meta.name | default('example-visitorsapp') }}"
+namespace: "{{ meta.namespace | default('example-visitorsapp') }}"
+state: present  # deploy with absent to uninstall
+frontendSize: "{{ size | default('2') }}"
+frontendTitle: "{{ title | default('My Visitor Dashboard') }}"
+frontendImage: "jdob/visitors-webui:1.0.0"
+containerPort: 3000
+exposedPort: 30686
